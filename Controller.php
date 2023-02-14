@@ -13,4 +13,10 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
 
         $this->layout = 'nolayout';
     }
+
+    public function GET_formbuilder()
+    {
+        $entity = $this->requestedEntity;
+        $this->render("form-builder", ['entity' => $entity]);
+    }
 }
