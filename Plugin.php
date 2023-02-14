@@ -2,6 +2,8 @@
 
 namespace EmbedTools;
 
+use MapasCulturais\App;
+
 class Plugin extends \MapasCulturais\Plugin
 {
     function __construct($config = [])
@@ -16,5 +18,9 @@ class Plugin extends \MapasCulturais\Plugin
 
     public function register()
     {
+        /** @var  App $app */
+        $app = App::i();
+
+        $app->registerController("embedtools", Controller::class);
     }
 }
