@@ -9,5 +9,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
 {
     public function __construct()
     {
+        $this->entityClassName = Opportunity::class;
+
+        $this->layout = 'nolayout';
     }
 }
