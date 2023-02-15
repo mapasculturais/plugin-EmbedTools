@@ -19,3 +19,6 @@ $this->addOpportunitySelectFieldsToJs($entity);
 $this->includeAngularEntityAssets($entity);
 
 ?>
+<article class="main-content opportunity" ng-controller="OpportunityController">
+    <?php $this->part('registration--manager', ['entity' => $entity]); ?>
+</article>
