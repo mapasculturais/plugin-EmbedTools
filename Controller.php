@@ -31,4 +31,13 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         $entity = $this->requestedEntity;
         $this->render("support-builder", ['entity' => $entity]);
     }
+
+    public function GET_registrationform()
+    {
+        $app = App::i();
+
+        $this->layout = "embedtools-registration";
+        $entity = $app->repo("Registration")->find($this->data['id']);
+        $this->render("registration-form", ['entity' => $entity]);
+    }
 }
