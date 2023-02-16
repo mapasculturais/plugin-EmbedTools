@@ -25,4 +25,10 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         $entity = $this->requestedEntity;
         $this->render("registration-manager", ['entity' => $entity]);
     }
+
+    public function GET_supportbuilder(){
+        
+        $entity = $this->requestedEntity;
+        $this->render("support-builder", ['entity' => $entity]);
+    }
 }
