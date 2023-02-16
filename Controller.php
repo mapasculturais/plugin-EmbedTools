@@ -40,4 +40,9 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         $entity = $app->repo("Registration")->find($this->data['id']);
         $this->render("registration-form", ['entity' => $entity]);
     }
+
+    public function GET_affirmativepoliciesmanager(){
+        $entity = $this->requestedEntity;
+        $this->render("affirmative-policies-manager", ['entity' => $entity]);
+    }
 }
