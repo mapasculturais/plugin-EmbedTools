@@ -19,6 +19,9 @@ $this->addRegistrationToJs($entity);
 $this->includeAngularEntityAssets($entity);
 
 $this->jsObject['request']['controller'] = "registration";
+
+$title = isset($entity) ? $this->getTitle($entity) : $this->getTitle();
+$site_name = $this->dict('site: name', false);
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $app->getCurrentLCode(); ?>" dir="ltr">
