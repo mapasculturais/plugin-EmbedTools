@@ -31,4 +31,10 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         $entity = $this->requestedEntity;
         $this->render("support-builder", ['entity' => $entity]);
     }
+
+    public function GET_affirmativepoliciesmanager(){
+        
+        $entity = $this->requestedEntity;
+        $this->render("affirmative-policies-manager", ['entity' => $entity]);
+    }
 }
