@@ -2,8 +2,8 @@
 
 namespace EmbedTools;
 
+use MapasCulturais\App;
 use MapasCulturais\Entities\Opportunity;
-use MapasCulturais\Entities;
 
 class Controller extends \MapasCulturais\Controllers\Opportunity
 {
