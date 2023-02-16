@@ -17,7 +17,8 @@ $this->includeAngularEntityAssets($entity);
 $this->jsObject['request']['controller'] = "opportunity";
 
 $site_name = $this->dict('site: name', false);
-$title = isset($entity) ? $this->getTitle($entity) : $this->getTitle()
+$title = isset($entity) ? $this->getTitle($entity) : $this->getTitle();
+$this->jsObject['evaluationConfiguration'] = $entity->evaluationMethodConfiguration;
 ?>
 <!DOCTYPE html>
 <html lang="<?php echo $app->getCurrentLCode(); ?>" dir="ltr">
