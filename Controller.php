@@ -11,6 +11,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
     {
         $this->entityClassName = Opportunity::class;
 
+        $this->requireAuthentication();
+
         $this->layout = 'embedtools-opportunity';
     }
 
