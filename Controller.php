@@ -16,32 +16,59 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
 
     public function GET_formbuilder()
     {
-        $entity = $this->requestedEntity;
+        $app = App::i();
+
+        if ($entity = $this->requestedEntity) {
+            $app->pass();
+        }
+
         $this->render("form-builder", ['entity' => $entity]);
     }
 
     public function GET_registrationmanager()
     {
-        $entity = $this->requestedEntity;
+        $app = App::i();
+
+        if (!$entity = $this->requestedEntity) {
+            $app->pass();
+        }
+
         $this->render("registration-manager", ['entity' => $entity]);
     }
 
     public function GET_supportbuilder(){
-        
-        $entity = $this->requestedEntity;
+    
+        $app = App::i();
+
+        if (!$entity = $this->requestedEntity) {
+            $app->pass();
+        }
+
         $this->render("support-builder", ['entity' => $entity]);
     }
 
     public function GET_registrationform()
     {
+        $app = App::i();
+
         $this->entityClassName = "MapasCulturais\\Entities\\Registration";
+
+        if ($entity = $this->requestedEntity) {
+            $app->pass();
+        }
+
         $this->layout = "embedtools-registration";
-        $entity = $this->requestedEntity;
         $this->render("registration-form", ['entity' => $entity]);
     }
 
     public function GET_affirmativepoliciesmanager(){
-        $entity = $this->requestedEntity;
+    
+        $app = App::i();
+
+        if ($entity = $this->requestedEntity) {
+            $app->pass();
+        }
+
         $this->render("affirmative-policies-manager", ['entity' => $entity]);
     }
 }
