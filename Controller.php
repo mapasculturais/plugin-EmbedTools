@@ -24,6 +24,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
             $app->pass();
         }
 
+        $entity->checkPermission('@control');
+
         $this->render("form-builder", ['entity' => $entity]);
     }
 
@@ -34,6 +36,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         if (!$entity = $this->requestedEntity) {
             $app->pass();
         }
+        
+        $entity->checkPermission('@control');
 
         $this->render("registration-manager", ['entity' => $entity]);
     }
@@ -46,6 +50,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
             $app->pass();
         }
 
+        $entity->checkPermission('@control');
+        
         $this->render("support-builder", ['entity' => $entity]);
     }
 
@@ -59,6 +65,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
             $app->pass();
         }
 
+        $entity->checkPermission('modify'); 
+
         $this->layout = "embedtools-registration";
         $this->render("registration-form", ['entity' => $entity]);
     }
@@ -70,6 +78,8 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         if ($entity = $this->requestedEntity) {
             $app->pass();
         }
+
+        $entity->checkPermission('@control');
 
         $this->render("affirmative-policies-manager", ['entity' => $entity]);
     }
