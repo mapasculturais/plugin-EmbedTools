@@ -36,14 +36,15 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         if (!$entity = $this->requestedEntity) {
             $app->pass();
         }
-        
+
         $entity->checkPermission('@control');
 
         $this->render("registration-manager", ['entity' => $entity]);
     }
 
-    public function GET_supportbuilder(){
-    
+    public function GET_supportbuilder()
+    {
+
         $app = App::i();
 
         if (!$entity = $this->requestedEntity) {
@@ -51,7 +52,7 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
         }
 
         $entity->checkPermission('@control');
-        
+
         $this->render("support-builder", ['entity' => $entity]);
     }
 
@@ -65,14 +66,14 @@ class Controller extends \MapasCulturais\Controllers\Opportunity
             $app->pass();
         }
 
-        $entity->checkPermission('modify'); 
+        $entity->checkPermission('modify');
 
         $this->layout = "embedtools-registration";
         $this->render("registration-form", ['entity' => $entity]);
     }
 
-    public function GET_affirmativepoliciesmanager(){
-    
+    public function GET_affirmativepoliciesmanager()
+    {
         $app = App::i();
 
         if ($entity = $this->requestedEntity) {
